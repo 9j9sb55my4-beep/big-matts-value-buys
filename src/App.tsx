@@ -6,10 +6,13 @@ import { StoreToggles } from './components/StoreToggles';
 import { CategoryGrid } from './components/CategoryGrid';
 import { DealList } from './components/DealList';
 import { HowItWorks } from './components/HowItWorks';
+import { AppTabs, type AppTab } from './components/AppTabs';
+import { GroceryListView } from './components/GroceryListView';
 import { CATEGORIES } from './data/categories';
 import { DEFAULT_ZIP, STORES } from './data/stores';
 import { loadWeeklyDeals } from './lib/loadDeals';
 import { addCrossStoreHints, rankDeals } from './lib/ranking';
+import { useGroceryList } from './hooks/useGroceryList';
 import type {
   CategoryId,
   DataSource,
@@ -24,6 +27,7 @@ const ALL_CATS = new Set(CATEGORIES.map((c) => c.id));
 const ALL_STORES = new Set(STORES.map((s) => s.id));
 
 export default function App() {
+  const [tab, setTab] = useState<AppTab>('deals');
   const [zip, setZip] = useState(DEFAULT_ZIP);
   const [categories, setCategories] = useState<Set<CategoryId>>(new Set(ALL_CATS));
   const [stores, setStores] = useState<Set<StoreId>>(new Set(ALL_STORES));
@@ -35,6 +39,7 @@ export default function App() {
   const [history, setHistory] = useState<PriceHistoryStore | null>(null);
   const [source, setSource] = useState<DataSource>('demo');
   const [banner, setBanner] = useState('Loading…');
+  const grocery = useGroceryList();
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -61,7 +66,6 @@ export default function App() {
     const filtered = week.deals.filter(
       (d) => stores.has(d.store) && categories.has(d.category),
     );
-    // Rank within store history first, then cross-check all three stores
     return addCrossStoreHints(
       rankDeals(filtered, history),
       history,
@@ -97,62 +101,79 @@ export default function App() {
 
       <DataBanner source={source} message={banner} />
 
+      <AppTabs tab={tab} onChange={setTab} groceryCount={grocery.count} />
+
       <main className="main">
-        <ZipBar zip={zip} onZipChange={setZip} />
-
-        <CategoryGrid
-          selected={categories}
-          onToggle={toggleCat}
-          onSelectAll={() => setCategories(new Set(ALL_CATS))}
-        />
-
-        <StoreToggles selected={stores} onToggle={toggleStore} />
-
-        <section className="toolbar panel">
-          <div className="toolbar-text">
-            <h2 className="results-title">Ranked deals</h2>
-            <p className="muted">
-              {loading
-                ? 'Checking ads…'
-                : `${scored.length} deals · ${steals} top picks${flagged ? ` · ${flagged} cheaper elsewhere` : ''}`}
-            </p>
-          </div>
-          <div className="toolbar-actions">
-            <label className="check-label">
-              <input
-                type="checkbox"
-                checked={groupByCategory}
-                onChange={(e) => setGroupByCategory(e.target.checked)}
-              />
-              Group by category
-            </label>
-            <label className="check-label">
-              <input
-                type="checkbox"
-                checked={preferLive}
-                onChange={(e) => setPreferLive(e.target.checked)}
-              />
-              Live ads
-            </label>
-            <button
-              type="button"
-              className="btn-primary"
-              onClick={() => void refresh()}
-              disabled={loading}
-            >
-              {loading ? '…' : 'Refresh'}
-            </button>
-          </div>
-        </section>
-
-        <HowItWorks />
-
-        {error ? <div className="error-box">{error}</div> : null}
-
-        {loading && !week ? (
-          <p className="loading">Loading picks…</p>
+        {tab === 'grocery' ? (
+          <GroceryListView
+            items={grocery.items}
+            onRemove={grocery.remove}
+            onClearAll={grocery.clearAll}
+          />
         ) : (
-          <DealList deals={scored} groupByCategory={groupByCategory} />
+          <>
+            <ZipBar zip={zip} onZipChange={setZip} />
+
+            <CategoryGrid
+              selected={categories}
+              onToggle={toggleCat}
+              onSelectAll={() => setCategories(new Set(ALL_CATS))}
+            />
+
+            <StoreToggles selected={stores} onToggle={toggleStore} />
+
+            <section className="toolbar panel">
+              <div className="toolbar-text">
+                <h2 className="results-title">Ranked deals</h2>
+                <p className="muted">
+                  {loading
+                    ? 'Checking ads…'
+                    : `${scored.length} deals · ${steals} top picks${flagged ? ` · ${flagged} cheaper elsewhere` : ''}`}
+                </p>
+              </div>
+              <div className="toolbar-actions">
+                <label className="check-label">
+                  <input
+                    type="checkbox"
+                    checked={groupByCategory}
+                    onChange={(e) => setGroupByCategory(e.target.checked)}
+                  />
+                  Group by category
+                </label>
+                <label className="check-label">
+                  <input
+                    type="checkbox"
+                    checked={preferLive}
+                    onChange={(e) => setPreferLive(e.target.checked)}
+                  />
+                  Live ads
+                </label>
+                <button
+                  type="button"
+                  className="btn-primary"
+                  onClick={() => void refresh()}
+                  disabled={loading}
+                >
+                  {loading ? '…' : 'Refresh'}
+                </button>
+              </div>
+            </section>
+
+            <HowItWorks />
+
+            {error ? <div className="error-box">{error}</div> : null}
+
+            {loading && !week ? (
+              <p className="loading">Loading picks…</p>
+            ) : (
+              <DealList
+                deals={scored}
+                groupByCategory={groupByCategory}
+                listIds={grocery.idSet}
+                onToggleList={grocery.toggle}
+              />
+            )}
+          </>
         )}
       </main>
 

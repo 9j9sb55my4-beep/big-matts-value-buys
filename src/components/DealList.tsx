@@ -5,9 +5,16 @@ import { DealCard } from './DealCard';
 interface Props {
   deals: ScoredDeal[];
   groupByCategory: boolean;
+  listIds: Set<string>;
+  onToggleList: (deal: ScoredDeal) => void;
 }
 
-export function DealList({ deals, groupByCategory }: Props) {
+export function DealList({
+  deals,
+  groupByCategory,
+  listIds,
+  onToggleList,
+}: Props) {
   if (deals.length === 0) {
     return (
       <div className="empty">
@@ -21,7 +28,12 @@ export function DealList({ deals, groupByCategory }: Props) {
     return (
       <div className="deal-list">
         {deals.map((d) => (
-          <DealCard key={d.id} deal={d} />
+          <DealCard
+            key={d.id}
+            deal={d}
+            inList={listIds.has(d.id)}
+            onToggleList={onToggleList}
+          />
         ))}
       </div>
     );
@@ -43,11 +55,14 @@ export function DealList({ deals, groupByCategory }: Props) {
         const meta = CATEGORIES.find((c) => c.id === id)!;
         return (
           <section key={id} className="cat-group">
-            <h2 className="cat-group-title">
-              <span aria-hidden>{meta.emoji}</span> {meta.label}
-            </h2>
+            <h2 className="cat-group-title">{meta.label}</h2>
             {list.map((d) => (
-              <DealCard key={d.id} deal={d} />
+              <DealCard
+                key={d.id}
+                deal={d}
+                inList={listIds.has(d.id)}
+                onToggleList={onToggleList}
+              />
             ))}
           </section>
         );

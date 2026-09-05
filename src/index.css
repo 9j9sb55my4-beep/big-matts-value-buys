@@ -1,9 +1,9 @@
 :root {
   font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.4;
+  line-height: 1.45;
   font-weight: 400;
-  color: #1a1f16;
-  background: #f3f6ef;
+  color: #1c2118;
+  background: #f7f3eb;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,6 +20,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: #f7f3eb;
 }
 
 #root {
