@@ -676,6 +676,37 @@
   color: #4a5340;
 }
 
+.deal-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  margin: -0.15rem 0 0.28rem;
+  padding: 0.08rem 0.45rem 0.08rem 0.28rem;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 999px;
+  background: #eef2e8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4a5340;
+  letter-spacing: 0.01em;
+}
+
+.deal-category-emoji {
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.grocery-category {
+  margin: 0.1rem 0 0.15rem;
+}
+
+.grocery-size.missing {
+  color: #8a9380;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .deal-size {
   margin: -0.1rem 0 0.4rem;
   font-size: 0.86rem;

@@ -1,4 +1,4 @@
-import { CATEGORIES } from '../data/categories';
+import { CATEGORIES, categoryMeta } from '../data/categories';
 import { formatUnitPrice } from '../lib/sizeParse';
 import type { GroceryItem } from '../lib/groceryList';
 import type { CategoryId } from '../types';
@@ -58,13 +58,16 @@ export function GroceryListView({ items, onRemove, onClearAll }: Props) {
           const meta = CATEGORIES.find((c) => c.id === id)!;
           return (
             <section key={id} className="grocery-group">
-              <h3 className="grocery-group-title">{meta.label}</h3>
+              <h3 className="grocery-group-title">
+                <span aria-hidden>{meta.emoji}</span> {meta.label}
+              </h3>
               <ul className="grocery-list">
                 {list.map((item) => {
                   const unitLabel =
                     item.unitPrice != null && item.unit
                       ? formatUnitPrice(item.unitPrice, item.unit)
                       : undefined;
+                  const cat = categoryMeta(item.category);
                   return (
                     <li key={item.id} className="grocery-item">
                       <button
@@ -88,6 +91,14 @@ export function GroceryListView({ items, onRemove, onClearAll }: Props) {
                           ) : null}
                           {item.name}
                         </p>
+                        {cat ? (
+                          <p className="deal-category grocery-category">
+                            <span className="deal-category-emoji" aria-hidden>
+                              {cat.emoji}
+                            </span>
+                            <span>{cat.shortLabel}</span>
+                          </p>
+                        ) : null}
                         {item.size ? (
                           <p className="grocery-size">
                             {item.size}
@@ -95,7 +106,9 @@ export function GroceryListView({ items, onRemove, onClearAll }: Props) {
                           </p>
                         ) : unitLabel ? (
                           <p className="grocery-size">{unitLabel}</p>
-                        ) : null}
+                        ) : (
+                          <p className="grocery-size missing">Size not listed</p>
+                        )}
                         {item.crossNote ? (
                           <p className="grocery-note">{item.crossNote}</p>
                         ) : null}

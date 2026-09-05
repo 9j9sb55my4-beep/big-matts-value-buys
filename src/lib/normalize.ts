@@ -15,14 +15,20 @@ export function normalizeName(name: string): string {
 function stripBrands(n: string): string {
   return n
     .replace(
-      /\b(la preferida|goya|bush'?s|bushs|ro tel|rosarita|signature|open nature|lucerne|just bare|dakota'?s? pride|dakotas pride|great value|good ?&? gather|market pantry|favorite day|priano|reggano|clancy'?s|never any|friendly farms|specially selected|appleton farms|casa mamita|kirkwood|little salad|up ?&? up|oroweat|boar'?s head|barilla|rao'?s|lay'?s|bounty|tide|digiorno|ben ?&? jerry'?s|tillamook|white claw|la marca)\b/g,
+      /\b(la preferida|goya|bush'?s|bushs|ro tel|rosarita|signature|open nature|lucerne|just bare|dakota'?s? pride|dakotas pride|great value|good ?&? gather|market pantry|favorite day|priano|reggano|clancy'?s|never any|friendly farms|specially selected|appleton farms|casa mamita|kirkwood|little salad|up ?&? up|oroweat|boar'?s head|barilla|rao'?s|lay'?s|bounty|tide|digiorno|ben ?&? jerry'?s|tillamook|white claw|la marca|nuestro queso|sargento|kraft|crystal farms|happy farms|emporium selection)\b/g,
       ' ',
     )
     .replace(/\s+/g, ' ')
     .trim();
 }
 
-/** Staple commodity matchers — brand-specific Jewel items match generic Aldi staples */
+/**
+ * Staple commodity matchers — brand-specific Jewel items match generic Aldi staples.
+ *
+ * Keep aliases tight: match regional/brand naming for the SAME commodity
+ * (e.g. Oaxaca ↔ Mexican shredded cheese / quesadilla cheese) without
+ * collapsing all "cheese" or all "yogurt" into one bucket.
+ */
 const STAPLE_ALIASES: [RegExp, string][] = [
   [/\bblack beans?\b/, 'black beans'],
   [/\bpinto beans?\b/, 'pinto beans'],
@@ -31,6 +37,22 @@ const STAPLE_ALIASES: [RegExp, string][] = [
   [/\brefried beans?\b/, 'refried beans'],
   [/\bbaked beans?\b/, 'baked beans'],
   [/\bcannellini|\bgreat northern beans?\b/, 'white beans'],
+  // Mexican-style shreds: Jewel "Nuestro Queso Shredded Oaxaca" ↔ Aldi "Mexican shredded cheese"
+  [
+    /\boaxaca\b|\bquesadilla cheese\b|\bmexican shredded(?:\s+cheese)?\b|\bshredded mexican(?:\s+cheese)?\b|\bshredded oaxaca\b/,
+    'mexican shredded cheese',
+  ],
+  [/\bshredded cheddar\b|\bcheddar shredded\b|\bcheddar cheese shredded\b/, 'shredded cheddar'],
+  [
+    /\bshredded mozzarella\b|\bmozzarella shredded\b|\bmozzarella cheese shredded\b/,
+    'shredded mozzarella',
+  ],
+  [/\bgreek yogurt\b/, 'greek yogurt'],
+  [/\bsour cream\b/, 'sour cream'],
+  [/\bcottage cheese\b/, 'cottage cheese'],
+  [/\bcream cheese\b/, 'cream cheese'],
+  [/\bflour tortillas?\b/, 'flour tortillas'],
+  [/\bcorn tortillas?\b/, 'corn tortillas'],
   [/\bitalian sausage\b/, 'italian sausage'],
   [/\bchicken breast/, 'chicken breast'],
   [/\bground (beef|chuck)\b/, 'ground beef'],

@@ -55,7 +55,7 @@ export function DealList({
         const meta = CATEGORIES.find((c) => c.id === id)!;
         return (
           <section key={id} className="cat-group">
-            <h2 className="cat-group-title">{meta.label}</h2>
+            <h2 className="cat-group-title"><span aria-hidden>{meta.emoji}</span> {meta.label}</h2>
             {list.map((d) => (
               <DealCard
                 key={d.id}

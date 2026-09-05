@@ -99,11 +99,18 @@ export const LIVE_SEARCH_QUERIES = [
   'paper towels',
   'deli',
   'ham',
+  // Beauty / personal care
+  'shampoo',
+  'conditioner',
+  'deodorant',
+  'toothpaste',
+  'makeup',
   // Staples — boost ecom everyday coverage for cross-store checks
   'black beans',
   'pinto beans',
   'canned beans',
   'chickpeas',
+  'shredded cheese',
 ] as const;
 
 function matchStore(merchantName: string): StoreId | null {
@@ -123,7 +130,19 @@ function parsePrice(v: unknown): number | undefined {
 function guessCategory(item: FlippSearchItem): CategoryId {
   const blob = `${item.name || ''} ${item._L1 || ''} ${item._L2 || ''} ${item.sale_story || ''}`.toLowerCase();
   if (/beer|wine|vodka|liquor|prosecco|seltzer|alcohol|spirits/.test(blob)) return 'alcohol';
-  if (/detergent|soap|cleaner|paper towel|tissue|trash|household|laundry|dish/.test(blob))
+  // Beauty / personal care before household (shampoo ≠ laundry; body wash ≠ dish soap)
+  if (
+    /shampoo|conditioner|makeup|mascara|lipstick|foundation|concealer|eyeliner|hair\s*dye|hair\s*color|salon|body\s*wash|bodywash|skincare|skin\s*care|moisturizer|lotion|deodorant|antiperspirant|toothpaste|toothbrush|mouthwash|floss|razor|shaving|sunscreen|beauty|cosmetic/.test(
+      blob,
+    )
+  )
+    return 'beauty';
+  // Household stays cleaning / paper / laundry focused (bar/hand soap & dish soap stay here)
+  if (
+    /detergent|cleaner|disinfectant|bleach|paper towel|toilet paper|tissue|trash|garbage bag|household|laundry|fabric softener|dish\s*soap|dishwashing|hand\s*soap|bar\s*soap|soap/.test(
+      blob,
+    )
+  )
     return 'household';
   if (/chip|cookie|cracker|snack|popcorn|pretzel|candy/.test(blob)) return 'snacks';
   if (/bread|bagel|bakery|croissant|muffin|roll|bun|tortilla/.test(blob)) return 'bakery';

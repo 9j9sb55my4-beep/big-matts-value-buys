@@ -1,3 +1,4 @@
+import { categoryMeta } from '../data/categories';
 import type { ScoredDeal } from '../types';
 import { effectiveDealPrice } from '../lib/history';
 import { formatUnitPrice } from '../lib/sizeParse';
@@ -41,6 +42,7 @@ export function DealCard({ deal, inList = false, onToggleList }: Props) {
     deal.unitPrice != null && deal.unit
       ? formatUnitPrice(deal.unitPrice, deal.unit)
       : undefined;
+  const cat = categoryMeta(deal.category);
 
   return (
     <article
@@ -104,6 +106,14 @@ export function DealCard({ deal, inList = false, onToggleList }: Props) {
             {deal.brand ? <span className="brand">{deal.brand} · </span> : null}
             {deal.name}
           </h3>
+          {cat ? (
+            <p className="deal-category">
+              <span className="deal-category-emoji" aria-hidden>
+                {cat.emoji}
+              </span>
+              <span>{cat.shortLabel}</span>
+            </p>
+          ) : null}
           {sizeLabel ? (
             <p className="deal-size">{sizeLabel}</p>
           ) : (

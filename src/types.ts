@@ -11,6 +11,7 @@ export type CategoryId =
   | 'pantry'
   | 'snacks'
   | 'bakery'
+  | 'beauty'
   | 'household'
   | 'deli';
 
@@ -159,5 +160,7 @@ export interface StoreMeta {
 export interface CategoryMeta {
   id: CategoryId;
   label: string;
+  /** Compact label for deal cards / list rows */
+  shortLabel: string;
   emoji: string;
 }
