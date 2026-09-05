@@ -1,0 +1,2532 @@
+{
+  "locationLabel": "River North / Near North Side, Chicago",
+  "zip": "60610",
+  "updatedAt": "2026-09-05T19:00:00Z",
+  "items": [
+    {
+      "key": "jewel-osco::italian sausage links",
+      "store": "jewel-osco",
+      "normalizedName": "italian sausage links",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "bogo",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "bogo",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 5.49,
+          "unitPrice": 5.49,
+          "promoType": "bogo",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.79,
+          "unitPrice": 4.79,
+          "promoType": "bogo",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "bogo",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::boneless skinless chicken breasts",
+      "store": "jewel-osco",
+      "normalizedName": "boneless skinless chicken breasts",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.79,
+          "unitPrice": 3.79,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.29,
+          "unitPrice": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.99,
+          "unitPrice": 1.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::80 lean ground beef",
+      "store": "jewel-osco",
+      "normalizedName": "80 lean ground beef",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 6.49,
+          "unitPrice": 6.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 5.79,
+          "unitPrice": 5.79,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 6.29,
+          "unitPrice": 6.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::organic avocados",
+      "store": "jewel-osco",
+      "normalizedName": "organic avocados",
+      "unit": "each",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.29,
+          "unitPrice": 2.29,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.99,
+          "unitPrice": 1.99,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1,
+          "unitPrice": 1,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::honeycrisp apples",
+      "store": "jewel-osco",
+      "normalizedName": "honeycrisp apples",
+      "unit": "lb",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.29,
+          "unitPrice": 3.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.99,
+          "unitPrice": 1.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::broccoli crowns",
+      "store": "jewel-osco",
+      "normalizedName": "broccoli crowns",
+      "unit": "lb",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.29,
+          "unitPrice": 2.29,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.99,
+          "unitPrice": 1.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.48,
+          "unitPrice": 1.48,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::lucerne large eggs",
+      "store": "jewel-osco",
+      "normalizedName": "lucerne large eggs",
+      "unit": "each",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.29,
+          "unitPrice": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.79,
+          "unitPrice": 3.79,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::lucerne whole milk",
+      "store": "jewel-osco",
+      "normalizedName": "lucerne whole milk",
+      "unit": "oz",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 4.19,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::tillamook cheese block",
+      "store": "jewel-osco",
+      "normalizedName": "tillamook cheese block",
+      "unit": "oz",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 6.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 6.49,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 6.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 5.99,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.99,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::digiorno rising crust pizza",
+      "store": "jewel-osco",
+      "normalizedName": "digiorno rising crust pizza",
+      "unit": "each",
+      "category": "frozen",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 7.99,
+          "unitPrice": 7.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 8.49,
+          "unitPrice": 8.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 8.49,
+          "unitPrice": 8.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::ben jerry s ice cream",
+      "store": "jewel-osco",
+      "normalizedName": "ben jerry s ice cream",
+      "unit": "oz",
+      "category": "frozen",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 5.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 5.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 4.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 5.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::la marca prosecco",
+      "store": "jewel-osco",
+      "normalizedName": "la marca prosecco",
+      "unit": "each",
+      "category": "alcohol",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 15.99,
+          "unitPrice": 15.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 16.99,
+          "unitPrice": 16.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 14.99,
+          "unitPrice": 14.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 16.99,
+          "unitPrice": 16.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 11.99,
+          "unitPrice": 11.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::white claw variety pack",
+      "store": "jewel-osco",
+      "normalizedName": "white claw variety pack",
+      "unit": "each",
+      "category": "alcohol",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 21.99,
+          "unitPrice": 21.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 22.99,
+          "unitPrice": 22.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 19.99,
+          "unitPrice": 19.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 22.99,
+          "unitPrice": 22.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 16.99,
+          "unitPrice": 16.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::barilla pasta",
+      "store": "jewel-osco",
+      "normalizedName": "barilla pasta",
+      "unit": "oz",
+      "category": "pantry",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 1.89,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 1.79,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 1.89,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.49,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::rao s homemade marinara",
+      "store": "jewel-osco",
+      "normalizedName": "rao s homemade marinara",
+      "unit": "oz",
+      "category": "pantry",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 8.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 7.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 8.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 6.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 5.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::lay s classic chips",
+      "store": "jewel-osco",
+      "normalizedName": "lay s classic chips",
+      "unit": "oz",
+      "category": "snacks",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.29,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.99,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.5,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::oroweat whole grain bread",
+      "store": "jewel-osco",
+      "normalizedName": "oroweat whole grain bread",
+      "unit": "oz",
+      "category": "bakery",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.79,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 4.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::bounty paper towels",
+      "store": "jewel-osco",
+      "normalizedName": "bounty paper towels",
+      "unit": "each",
+      "category": "household",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 14.99,
+          "unitPrice": 14.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 15.99,
+          "unitPrice": 15.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 13.99,
+          "unitPrice": 13.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 15.99,
+          "unitPrice": 15.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 9.99,
+          "unitPrice": 9.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::tide pods",
+      "store": "jewel-osco",
+      "normalizedName": "tide pods",
+      "unit": "each",
+      "category": "household",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 17.99,
+          "unitPrice": 17.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 18.99,
+          "unitPrice": 18.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 16.99,
+          "unitPrice": 16.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 18.99,
+          "unitPrice": 18.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 11.99,
+          "unitPrice": 11.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "jewel-osco::boar s head oven gold turkey",
+      "store": "jewel-osco",
+      "normalizedName": "boar s head oven gold turkey",
+      "unit": "lb",
+      "category": "deli",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 11.99,
+          "unitPrice": 11.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 12.99,
+          "unitPrice": 12.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 10.99,
+          "unitPrice": 10.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 12.99,
+          "unitPrice": 12.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 8.99,
+          "unitPrice": 8.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::never any chicken breast",
+      "store": "aldi",
+      "normalizedName": "never any chicken breast",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.29,
+          "unitPrice": 3.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.89,
+          "unitPrice": 2.89,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::italian sausage",
+      "store": "aldi",
+      "normalizedName": "italian sausage",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.69,
+          "unitPrice": 3.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::ground chuck 80 20",
+      "store": "aldi",
+      "normalizedName": "ground chuck 80 20",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.29,
+          "unitPrice": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.69,
+          "unitPrice": 3.69,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::salmon fillets",
+      "store": "aldi",
+      "normalizedName": "salmon fillets",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 8.99,
+          "unitPrice": 8.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 9.99,
+          "unitPrice": 9.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 7.99,
+          "unitPrice": 7.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 9.49,
+          "unitPrice": 9.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::avocados",
+      "store": "aldi",
+      "normalizedName": "avocados",
+      "unit": "each",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 0.99,
+          "unitPrice": 0.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 1.29,
+          "unitPrice": 1.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 0.89,
+          "unitPrice": 0.89,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.19,
+          "unitPrice": 1.19,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 0.69,
+          "unitPrice": 0.69,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::strawberries",
+      "store": "aldi",
+      "normalizedName": "strawberries",
+      "unit": "each",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.69,
+          "unitPrice": 2.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.89,
+          "unitPrice": 1.89,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::bananas",
+      "store": "aldi",
+      "normalizedName": "bananas",
+      "unit": "lb",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 0.49,
+          "unitPrice": 0.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 0.59,
+          "unitPrice": 0.59,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 0.45,
+          "unitPrice": 0.45,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 0.55,
+          "unitPrice": 0.55,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 0.39,
+          "unitPrice": 0.39,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::friendly farms eggs large",
+      "store": "aldi",
+      "normalizedName": "friendly farms eggs large",
+      "unit": "each",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.45,
+          "unitPrice": 2.45,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.65,
+          "unitPrice": 2.65,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.25,
+          "unitPrice": 2.25,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.65,
+          "unitPrice": 2.65,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.85,
+          "unitPrice": 1.85,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::friendly farms whole milk",
+      "store": "aldi",
+      "normalizedName": "friendly farms whole milk",
+      "unit": "oz",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.25,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.45,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.15,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.45,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.65,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::emporium selection cheddar",
+      "store": "aldi",
+      "normalizedName": "emporium selection cheddar",
+      "unit": "oz",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.65,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.89,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.89,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.15,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::casa mamita burritos",
+      "store": "aldi",
+      "normalizedName": "casa mamita burritos",
+      "unit": "oz",
+      "category": "frozen",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::specially selected ice cream",
+      "store": "aldi",
+      "normalizedName": "specially selected ice cream",
+      "unit": "oz",
+      "category": "frozen",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.29,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.85,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::winking owl cabernet",
+      "store": "aldi",
+      "normalizedName": "winking owl cabernet",
+      "unit": "each",
+      "category": "alcohol",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.45,
+          "unitPrice": 3.45,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.95,
+          "unitPrice": 3.95,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.25,
+          "unitPrice": 3.25,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.95,
+          "unitPrice": 3.95,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.95,
+          "unitPrice": 2.95,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::priano pasta sauce",
+      "store": "aldi",
+      "normalizedName": "priano pasta sauce",
+      "unit": "oz",
+      "category": "pantry",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.09,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 1.89,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.69,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::reggano spaghetti",
+      "store": "aldi",
+      "normalizedName": "reggano spaghetti",
+      "unit": "oz",
+      "category": "pantry",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 1.05,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 1.15,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 0.95,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.15,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 0.85,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::clancy s potato chips",
+      "store": "aldi",
+      "normalizedName": "clancy s potato chips",
+      "unit": "oz",
+      "category": "snacks",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 1.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 1.89,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 1.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.89,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.35,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::l oven fresh bread",
+      "store": "aldi",
+      "normalizedName": "l oven fresh bread",
+      "unit": "oz",
+      "category": "bakery",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 1.59,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 1.79,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 1.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.79,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.29,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::bake shop croissants 4 pack",
+      "store": "aldi",
+      "normalizedName": "bake shop croissants 4 pack",
+      "unit": "each",
+      "category": "bakery",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.29,
+          "unitPrice": 3.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.49,
+          "unitPrice": 2.49,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::alpine fresh paper towels",
+      "store": "aldi",
+      "normalizedName": "alpine fresh paper towels",
+      "unit": "each",
+      "category": "household",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 7.49,
+          "unitPrice": 7.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 8.49,
+          "unitPrice": 8.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 8.49,
+          "unitPrice": 8.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "aldi::appleton farms honey ham",
+      "store": "aldi",
+      "normalizedName": "appleton farms honey ham",
+      "unit": "lb",
+      "category": "deli",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 5.49,
+          "unitPrice": 5.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 5.49,
+          "unitPrice": 5.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather chicken breast",
+      "store": "target",
+      "normalizedName": "good gather chicken breast",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.79,
+          "unitPrice": 3.79,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.29,
+          "unitPrice": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather ground beef 85",
+      "store": "target",
+      "normalizedName": "good gather ground beef 85",
+      "unit": "lb",
+      "category": "meat",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 5.49,
+          "unitPrice": 5.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 6.49,
+          "unitPrice": 6.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather organic blueberries",
+      "store": "target",
+      "normalizedName": "good gather organic blueberries",
+      "unit": "each",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::bagged mini peppers",
+      "store": "target",
+      "normalizedName": "bagged mini peppers",
+      "unit": "each",
+      "category": "produce",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.69,
+          "unitPrice": 3.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.29,
+          "unitPrice": 3.29,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.5,
+          "unitPrice": 2.5,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather eggs",
+      "store": "target",
+      "normalizedName": "good gather eggs",
+      "unit": "each",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.29,
+          "unitPrice": 3.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.79,
+          "unitPrice": 3.79,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.79,
+          "unitPrice": 3.79,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.29,
+          "unitPrice": 2.29,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather greek yogurt 4 pack",
+      "store": "target",
+      "normalizedName": "good gather greek yogurt 4 pack",
+      "unit": "each",
+      "category": "dairy",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 5.29,
+          "unitPrice": 5.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 4.49,
+          "unitPrice": 4.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 5.29,
+          "unitPrice": 5.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.49,
+          "unitPrice": 3.49,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather frozen pizza",
+      "store": "target",
+      "normalizedName": "good gather frozen pizza",
+      "unit": "each",
+      "category": "frozen",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 5.49,
+          "unitPrice": 5.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::favorite day ice cream",
+      "store": "target",
+      "normalizedName": "favorite day ice cream",
+      "unit": "oz",
+      "category": "frozen",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.29,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.79,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::barefoot pinot grigio",
+      "store": "target",
+      "normalizedName": "barefoot pinot grigio",
+      "unit": "each",
+      "category": "alcohol",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 9.99,
+          "unitPrice": 9.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 10.99,
+          "unitPrice": 10.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 8.99,
+          "unitPrice": 8.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 10.99,
+          "unitPrice": 10.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 7.99,
+          "unitPrice": 7.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::truly variety pack",
+      "store": "target",
+      "normalizedName": "truly variety pack",
+      "unit": "each",
+      "category": "alcohol",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 18.99,
+          "unitPrice": 18.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 19.99,
+          "unitPrice": 19.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 16.99,
+          "unitPrice": 16.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 19.99,
+          "unitPrice": 19.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 14.99,
+          "unitPrice": 14.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather pasta",
+      "store": "target",
+      "normalizedName": "good gather pasta",
+      "unit": "oz",
+      "category": "pantry",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 1.39,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 1.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 1.29,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 1.49,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 0.99,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather olive oil",
+      "store": "target",
+      "normalizedName": "good gather olive oil",
+      "unit": "oz",
+      "category": "pantry",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 9.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 9.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 8.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 9.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 6.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather tortilla chips",
+      "store": "target",
+      "normalizedName": "good gather tortilla chips",
+      "unit": "oz",
+      "category": "snacks",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.29,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::favorite day cookies",
+      "store": "target",
+      "normalizedName": "favorite day cookies",
+      "unit": "oz",
+      "category": "snacks",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.69,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 3.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.29,
+          "promoType": "multi",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 3.99,
+          "promoType": "multi",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.5,
+          "promoType": "multi",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::market pantry bread",
+      "store": "target",
+      "normalizedName": "market pantry bread",
+      "unit": "oz",
+      "category": "bakery",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.29,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.79,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::freshness guaranteed bagels",
+      "store": "target",
+      "normalizedName": "freshness guaranteed bagels",
+      "unit": "each",
+      "category": "bakery",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 3.99,
+          "unitPrice": 3.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 4.29,
+          "unitPrice": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 3.69,
+          "unitPrice": 3.69,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 4.29,
+          "unitPrice": 4.29,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 2.99,
+          "unitPrice": 2.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::up up dish soap",
+      "store": "target",
+      "normalizedName": "up up dish soap",
+      "unit": "oz",
+      "category": "household",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 2.69,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 2.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 2.49,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 2.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 1.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::up up laundry detergent",
+      "store": "target",
+      "normalizedName": "up up laundry detergent",
+      "unit": "oz",
+      "category": "household",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 11.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 12.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 10.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 12.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 8.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::good gather deli turkey",
+      "store": "target",
+      "normalizedName": "good gather deli turkey",
+      "unit": "lb",
+      "category": "deli",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 7.49,
+          "unitPrice": 7.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 7.99,
+          "unitPrice": 7.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 7.99,
+          "unitPrice": 7.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    },
+    {
+      "key": "target::ready meals chicken alfredo",
+      "store": "target",
+      "normalizedName": "ready meals chicken alfredo",
+      "unit": "each",
+      "category": "deli",
+      "points": [
+        {
+          "weekStart": "2026-08-06",
+          "price": 6.49,
+          "unitPrice": 6.49,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-13",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-08-20",
+          "price": 5.99,
+          "unitPrice": 5.99,
+          "promoType": "sale",
+          "onAd": true
+        },
+        {
+          "weekStart": "2026-08-27",
+          "price": 6.99,
+          "unitPrice": 6.99,
+          "promoType": "plain",
+          "onAd": false
+        },
+        {
+          "weekStart": "2026-09-03",
+          "price": 4.99,
+          "unitPrice": 4.99,
+          "promoType": "sale",
+          "onAd": true
+        }
+      ]
+    }
+  ]
+}
