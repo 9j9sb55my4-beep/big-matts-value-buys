@@ -2,11 +2,12 @@ import type {
   AnalysisInsight,
   Deal,
   HistoryPoint,
+  HistorySource,
   ItemHistory,
   PriceHistoryStore,
   PromoType,
 } from '../types';
-import { normalizeName } from './normalize';
+import { normalizeName, similarityKey } from './normalize';
 
 export function historyKey(store: string, normalizedName: string): string {
   return `${store}::${normalizedName}`;
@@ -32,19 +33,57 @@ export function effectiveDealPrice(deal: Deal): number {
   return deal.price;
 }
 
+function tokenOverlap(a: string, b: string): number {
+  const ta = new Set(a.split(' ').filter((t) => t.length > 2));
+  const tb = new Set(b.split(' ').filter((t) => t.length > 2));
+  if (ta.size === 0 || tb.size === 0) return 0;
+  let hit = 0;
+  for (const t of ta) if (tb.has(t)) hit++;
+  return hit / Math.min(ta.size, tb.size);
+}
+
+/** Find best history row for a deal: exact key → name → similarity → token overlap */
+export function findHistoryItem(
+  deal: Deal,
+  store: PriceHistoryStore,
+): ItemHistory | undefined {
+  const nName = deal.normalizedName || normalizeName(deal.name);
+  const key = historyKey(deal.store, nName);
+  let item = store.items.find((i) => i.key === key);
+  if (item) return item;
+  item = store.items.find(
+    (i) => i.store === deal.store && i.normalizedName === nName,
+  );
+  if (item) return item;
+
+  const sim = similarityKey(deal.name);
+  const sameStore = store.items.filter((i) => i.store === deal.store);
+  item = sameStore.find((i) => similarityKey(i.normalizedName) === sim);
+  if (item) return item;
+
+  let best: ItemHistory | undefined;
+  let bestScore = 0.55;
+  for (const cand of sameStore) {
+    const score = Math.max(
+      tokenOverlap(nName, cand.normalizedName),
+      nName.includes(cand.normalizedName) || cand.normalizedName.includes(nName)
+        ? 0.7
+        : 0,
+    );
+    if (score > bestScore) {
+      bestScore = score;
+      best = cand;
+    }
+  }
+  return best;
+}
+
 export function analyzeAgainstHistory(
   deal: Deal,
   store: PriceHistoryStore | null,
 ): AnalysisInsight | undefined {
   if (!store) return undefined;
-  const nName = deal.normalizedName || normalizeName(deal.name);
-  const key = historyKey(deal.store, nName);
-  let item: ItemHistory | undefined = store.items.find((i) => i.key === key);
-  if (!item) {
-    item = store.items.find(
-      (i) => i.store === deal.store && i.normalizedName === nName,
-    );
-  }
+  const item = findHistoryItem(deal, store);
   if (!item || item.points.length === 0) return undefined;
 
   // Exclude current week from baseline when dates overlap
@@ -123,6 +162,7 @@ export function upsertHistory(
   store: PriceHistoryStore,
   deals: Deal[],
   weekStart: string,
+  source: HistorySource = 'flipp-live',
 ): PriceHistoryStore {
   const map = new Map(store.items.map((i) => [i.key, { ...i, points: [...i.points] }]));
 
@@ -138,6 +178,7 @@ export function upsertHistory(
       unitPrice: deal.unitPrice,
       promoType,
       onAd: true,
+      source,
     };
     const existing = map.get(key);
     if (existing) {

@@ -47,12 +47,16 @@ export interface Deal {
   promoType?: PromoType;
 }
 
+export type HistorySource = 'seed' | 'flipp-archive' | 'flipp-live' | 'ecom' | 'everyday-seed';
+
 export interface HistoryPoint {
   weekStart: string;
   price: number;
   unitPrice?: number;
   promoType: PromoType;
   onAd: boolean;
+  /** Where this price point came from */
+  source?: HistorySource;
 }
 
 export interface ItemHistory {
@@ -69,6 +73,7 @@ export interface PriceHistoryStore {
   zip: string;
   updatedAt: string;
   items: ItemHistory[];
+  notes?: string;
 }
 
 export interface AnalysisInsight {
@@ -83,6 +88,37 @@ export interface AnalysisInsight {
   reasonChips: string[];
 }
 
+/** Everyday / ecom / history reference used for cross-store best-price checks */
+export type ReferenceKind = 'everyday' | 'ecom' | 'sale' | 'history';
+
+export interface ReferencePrice {
+  store: StoreId;
+  storeLabel: string;
+  name: string;
+  normalizedName: string;
+  price: number;
+  kind: ReferenceKind;
+  /** Optional id when sourced from a deal in the same pull */
+  dealId?: string;
+  /** Product / search page when known (ecom) */
+  url?: string;
+}
+
+export interface CrossStoreCompare {
+  /** Other store that beats this deal */
+  store: StoreId;
+  storeLabel: string;
+  price: number;
+  kind: ReferenceKind;
+  name: string;
+  /** One short flag, e.g. "Aldi $0.99 everyday" (⚠ shown separately in UI) */
+  alert: string;
+  /** Cheaper store product/search page for verification */
+  proofUrl: string;
+  /** Chip text */
+  chip: string;
+}
+
 export interface ScoredDeal extends Deal {
   valueScore: number;
   analysisScore: number;
@@ -92,6 +128,10 @@ export interface ScoredDeal extends Deal {
   effectivePrice: number;
   reasons: string[];
   analysis?: AnalysisInsight;
+  /** Set when another store has a cheaper comparable item */
+  crossStore?: CrossStoreCompare;
+  /** True when this deal is the cheapest comparable across stores */
+  isCrossStoreWinner?: boolean;
 }
 
 export interface WeekPayload {
@@ -104,6 +144,8 @@ export interface WeekPayload {
   fetchedAt: string;
   deals: Deal[];
   liveNote?: string;
+  /** Everyday shelf / ecom prices collected alongside weekly ads */
+  referencePrices?: ReferencePrice[];
 }
 
 export interface StoreMeta {

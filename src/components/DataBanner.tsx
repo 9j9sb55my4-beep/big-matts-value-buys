@@ -6,13 +6,17 @@ interface Props {
 }
 
 export function DataBanner({ source, message }: Props) {
+  const label = source === 'demo' ? 'Demo' : 'Live';
   return (
     <div
       className={`data-banner ${source === 'demo' ? 'demo' : 'live'}`}
       role="status"
     >
-      <strong>{source === 'demo' ? 'Demo mode' : 'Live ads'}</strong>
-      <span>{message}</span>
+      <span className="banner-dot" aria-hidden />
+      <span className="banner-line">
+        <strong>{label}</strong>
+        {message ? ` · ${message}` : ''}
+      </span>
     </div>
   );
 }

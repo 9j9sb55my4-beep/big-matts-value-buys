@@ -9,7 +9,7 @@ interface Props {
 export function StoreToggles({ selected, onToggle }: Props) {
   return (
     <section className="panel" aria-label="Stores">
-      <p className="panel-label">Stores to include</p>
+      <p className="panel-label">Stores</p>
       <div className="chip-row">
         {STORES.map((s) => {
           const on = selected.has(s.id);

@@ -2,7 +2,7 @@
   "source": "demo",
   "zip": "60610",
   "locationLabel": "River North / Near North Side, Chicago",
-  "weekLabel": "Week of Sep 3–9, 2026",
+  "weekLabel": "Week of Sep 3\u20139, 2026",
   "validFrom": "2026-09-03",
   "validTo": "2026-09-09",
   "fetchedAt": "2026-09-05T19:00:00Z",
@@ -24,7 +24,7 @@
       "validFrom": "2026-09-03",
       "validTo": "2026-09-09",
       "flyerUrl": "https://www.jewelosco.com/weeklyad",
-      "notes": "BOGO this week — rarely on ad · BOGO → ~$1.25 ea effective",
+      "notes": "BOGO this week \u2014 rarely on ad \u00b7 BOGO \u2192 ~$1.25 ea effective",
       "promoType": "bogo"
     },
     {
@@ -363,14 +363,31 @@
       "brand": "Tide",
       "price": 11.99,
       "regPrice": 18.99,
-      "unitPrice": 11.99,
-      "unit": "each",
+      "unitPrice": 0.285,
+      "unit": "ct",
       "bogo": false,
       "size": "42 ct",
       "validFrom": "2026-09-03",
       "validTo": "2026-09-09",
       "flyerUrl": "https://www.jewelosco.com/weeklyad",
       "promoType": "sale"
+    },
+    {
+      "id": "jewel-osco-tide-liquid",
+      "store": "jewel-osco",
+      "storeLabel": "Jewel-Osco",
+      "category": "household",
+      "name": "Tide Laundry Detergent",
+      "normalizedName": "tide laundry detergent",
+      "brand": "Tide",
+      "price": 23.99,
+      "regPrice": 27.99,
+      "bogo": false,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-09",
+      "flyerUrl": "https://www.jewelosco.com/weeklyad",
+      "promoType": "sale",
+      "notes": "HOT OFFER"
     },
     {
       "id": "jewel-osco-19",
@@ -1102,7 +1119,8 @@
       "validFrom": "2026-09-03",
       "validTo": "2026-09-09",
       "flyerUrl": "https://www.target.com/c/weekly-ad/-/N-4sr7l",
-      "promoType": "sale"
+      "promoType": "sale",
+      "unitPrice": 0.09
     },
     {
       "id": "target-58",
@@ -1141,7 +1159,98 @@
       "validTo": "2026-09-09",
       "flyerUrl": "https://www.target.com/c/weekly-ad/-/N-4sr7l",
       "promoType": "sale"
+    },
+    {
+      "id": "jewel-osco-beans-demo",
+      "store": "jewel-osco",
+      "storeLabel": "Jewel-Osco",
+      "category": "pantry",
+      "name": "La Preferida Pinto Beans, Black Beans or Chickpeas",
+      "normalizedName": "la preferida pinto beans black beans or chickpeas",
+      "brand": "La Preferida",
+      "price": 2.49,
+      "regPrice": 2.49,
+      "unit": "oz",
+      "size": "15 oz",
+      "bogo": true,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-09",
+      "flyerUrl": "https://www.jewelosco.com/weeklyad",
+      "notes": "BOGO \u2192 ~$1.25 ea \u2014 looks great vs Jewel history, but Aldi everyday is lower",
+      "promoType": "bogo"
+    },
+    {
+      "id": "aldi-black-beans-demo",
+      "store": "aldi",
+      "storeLabel": "Aldi",
+      "category": "pantry",
+      "name": "Dakota's Pride Black Beans",
+      "normalizedName": "dakota s pride black beans",
+      "brand": "Dakota's Pride",
+      "price": 0.99,
+      "regPrice": 0.99,
+      "unit": "oz",
+      "size": "15.5 oz",
+      "bogo": false,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-09",
+      "flyerUrl": "https://www.aldi.us/en/weekly-specials/",
+      "notes": "Everyday shelf price \u2014 usually ~$0.89\u2013$0.99",
+      "promoType": "plain"
+    },
+    {
+      "id": "aldi-pinto-beans-demo",
+      "store": "aldi",
+      "storeLabel": "Aldi",
+      "category": "pantry",
+      "name": "Dakota's Pride Pinto Beans",
+      "normalizedName": "dakota s pride pinto beans",
+      "brand": "Dakota's Pride",
+      "price": 0.95,
+      "regPrice": 0.95,
+      "unit": "oz",
+      "size": "15.5 oz",
+      "bogo": false,
+      "validFrom": "2026-09-03",
+      "validTo": "2026-09-09",
+      "flyerUrl": "https://www.aldi.us/en/weekly-specials/",
+      "notes": "Everyday shelf",
+      "promoType": "plain"
     }
   ],
-  "liveNote": "Demo circular + seeded 5-week price history for River North (60610). Not live retailer data."
+  "liveNote": "Demo circular + seeded 5-week price history for River North (60610). Not live retailer data.",
+  "referencePrices": [
+    {
+      "store": "aldi",
+      "storeLabel": "Aldi",
+      "name": "Dakota's Pride Black Beans",
+      "normalizedName": "dakota s pride black beans",
+      "price": 0.99,
+      "kind": "everyday"
+    },
+    {
+      "store": "aldi",
+      "storeLabel": "Aldi",
+      "name": "Dakota's Pride Pinto Beans",
+      "normalizedName": "dakota s pride pinto beans",
+      "price": 0.95,
+      "kind": "everyday"
+    },
+    {
+      "store": "aldi",
+      "storeLabel": "Aldi",
+      "name": "Dakota's Pride Chickpeas",
+      "normalizedName": "dakota s pride chickpeas",
+      "price": 0.99,
+      "kind": "everyday"
+    },
+    {
+      "store": "target",
+      "storeLabel": "Target",
+      "name": "Good & Gather Black Beans",
+      "normalizedName": "good gather black beans",
+      "price": 0.99,
+      "kind": "everyday"
+    }
+  ]
 }

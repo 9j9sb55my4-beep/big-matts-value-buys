@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
   DEFAULT_ZIP,
-  isChicagolandZip,
   isValidUsZip,
   locationLabelForZip,
 } from '../data/stores';
@@ -11,7 +10,7 @@ interface Props {
   onZipChange: (zip: string) => void;
 }
 
-const SUGGESTIONS = ['60610', '60611', '60614', '60647', '60657', '60540', '60007'];
+const SUGGESTIONS = ['60610', '60611', '60614', '60647', '60657', '60540'];
 
 export function ZipBar({ zip, onZipChange }: Props) {
   const [draft, setDraft] = useState(zip);
@@ -27,16 +26,12 @@ export function ZipBar({ zip, onZipChange }: Props) {
   }
 
   const valid = isValidUsZip(draft);
-  const chicagoland = valid && isChicagolandZip(draft);
 
   return (
     <section className="panel zip-bar" aria-label="Location">
       <label htmlFor="zip-input" className="panel-label">
-        Your ZIP code
+        Your ZIP
       </label>
-      <p className="zip-promise">
-        Enter your ZIP — we pull Jewel, Aldi &amp; Target flyers for your area.
-      </p>
       <div className="zip-row">
         <input
           id="zip-input"
@@ -53,13 +48,7 @@ export function ZipBar({ zip, onZipChange }: Props) {
           }}
         />
         <p id="zip-hint" className="zip-hint">
-          {valid
-            ? locationLabelForZip(draft)
-            : 'Type a 5-digit US ZIP (default 60610 River North).'}
-          {valid && !chicagoland
-            ? ' Outside the usual Chicagoland 600–608 range — we still try live flyers.'
-            : null}
-          {chicagoland ? ' Chicagoland area ✓' : null}
+          {valid ? locationLabelForZip(draft) : '5-digit US ZIP'}
         </p>
       </div>
       <div className="chip-row zip-suggestions" aria-label="Suggested ZIPs">

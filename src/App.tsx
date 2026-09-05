@@ -61,10 +61,16 @@ export default function App() {
     const filtered = week.deals.filter(
       (d) => stores.has(d.store) && categories.has(d.category),
     );
-    return addCrossStoreHints(rankDeals(filtered, history));
+    // Rank within store history first, then cross-check all three stores
+    return addCrossStoreHints(
+      rankDeals(filtered, history),
+      history,
+      week.referencePrices ?? [],
+    );
   }, [week, history, stores, categories]);
 
   const steals = scored.filter((d) => d.tier === 'steal').length;
+  const flagged = scored.filter((d) => d.crossStore).length;
 
   function toggleCat(id: CategoryId) {
     setCategories((prev) => {
@@ -104,11 +110,11 @@ export default function App() {
 
         <section className="toolbar panel">
           <div className="toolbar-text">
-            <h2 className="results-title">Best true deals this week</h2>
+            <h2 className="results-title">Ranked deals</h2>
             <p className="muted">
               {loading
-                ? 'Checking the ads…'
-                : `${scored.length} deals · ${steals} marked “Best deal” · ${week?.weekLabel ?? ''}`}
+                ? 'Checking ads…'
+                : `${scored.length} deals · ${steals} top picks${flagged ? ` · ${flagged} cheaper elsewhere` : ''}`}
             </p>
           </div>
           <div className="toolbar-actions">
@@ -126,7 +132,7 @@ export default function App() {
                 checked={preferLive}
                 onChange={(e) => setPreferLive(e.target.checked)}
               />
-              Try live ads first
+              Live ads
             </label>
             <button
               type="button"
@@ -134,7 +140,7 @@ export default function App() {
               onClick={() => void refresh()}
               disabled={loading}
             >
-              {loading ? 'Refreshing…' : 'Refresh weekly ads'}
+              {loading ? '…' : 'Refresh'}
             </button>
           </div>
         </section>
@@ -144,19 +150,14 @@ export default function App() {
         {error ? <div className="error-box">{error}</div> : null}
 
         {loading && !week ? (
-          <p className="loading">Loading Big Matt&apos;s picks…</p>
+          <p className="loading">Loading picks…</p>
         ) : (
           <DealList deals={scored} groupByCategory={groupByCategory} />
         )}
       </main>
 
       <footer className="site-footer">
-        <p>
-          Big Matt&apos;s Value Buys · ZIP {zip} · Jewel · Aldi · Target
-        </p>
-        <p className="muted">
-          Live mode uses Flipp search for your ZIP. Demo is only a labeled fallback if live fails.
-        </p>
+        <p>Jewel · Aldi · Target · ZIP {zip}</p>
       </footer>
     </div>
   );
