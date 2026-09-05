@@ -202,27 +202,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-.zip-suggestions {
-  margin-top: 0.5rem;
-}
-
-.zip-chip {
-  min-height: 42px;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-  border: 2px solid #c5d0bc;
-  background: #fbfef9;
-  font-size: 1rem;
-  font-weight: 750;
-  color: #1a1f16;
-}
-
-.zip-chip.on {
-  border-color: #2f6b3c;
-  background: #e7f4e8;
-  color: #134d28;
-}
-
 .zip-promise {
   margin: -0.15rem 0 0.55rem;
   font-size: 0.98rem;

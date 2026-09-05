@@ -10,8 +10,6 @@ interface Props {
   onZipChange: (zip: string) => void;
 }
 
-const SUGGESTIONS = ['60610', '60611', '60614', '60647', '60657', '60540'];
-
 export function ZipBar({ zip, onZipChange }: Props) {
   const [draft, setDraft] = useState(zip);
 
@@ -50,18 +48,6 @@ export function ZipBar({ zip, onZipChange }: Props) {
         <p id="zip-hint" className="zip-hint">
           {valid ? locationLabelForZip(draft) : '5-digit US ZIP'}
         </p>
-      </div>
-      <div className="chip-row zip-suggestions" aria-label="Suggested ZIPs">
-        {SUGGESTIONS.map((z) => (
-          <button
-            key={z}
-            type="button"
-            className={`chip zip-chip ${zip === z ? 'on' : ''}`}
-            onClick={() => apply(z)}
-          >
-            {z}
-          </button>
-        ))}
       </div>
     </section>
   );

@@ -17,19 +17,20 @@ interface StapleSeed {
 
 /** Chicagoland-ish everyday staples — Aldi black beans ~$0.89–$0.99 */
 export const EVERYDAY_STAPLES: StapleSeed[] = [
-  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Black Beans", category: 'pantry', price: 0.95, unit: 'oz' },
-  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Pinto Beans", category: 'pantry', price: 0.95, unit: 'oz' },
-  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Chickpeas", category: 'pantry', price: 0.99, unit: 'oz' },
-  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Kidney Beans", category: 'pantry', price: 0.95, unit: 'oz' },
-  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Refried Beans", category: 'pantry', price: 1.15, unit: 'oz' },
-  { store: 'aldi', storeLabel: 'Aldi', name: 'Reggano Spaghetti', category: 'pantry', price: 0.99, unit: 'oz' },
+  // Canned beans / dry pantry: these prices are per PACKAGE (typical 15–16 oz can), not $/oz.
+  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Black Beans", category: 'pantry', price: 0.95 },
+  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Pinto Beans", category: 'pantry', price: 0.95 },
+  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Chickpeas", category: 'pantry', price: 0.99 },
+  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Kidney Beans", category: 'pantry', price: 0.95 },
+  { store: 'aldi', storeLabel: 'Aldi', name: "Dakota's Pride Refried Beans", category: 'pantry', price: 1.15 },
+  { store: 'aldi', storeLabel: 'Aldi', name: 'Reggano Spaghetti', category: 'pantry', price: 0.99 },
   { store: 'aldi', storeLabel: 'Aldi', name: 'Friendly Farms Large Eggs', category: 'dairy', price: 2.45, unit: 'each' },
-  { store: 'aldi', storeLabel: 'Aldi', name: 'Friendly Farms Whole Milk', category: 'dairy', price: 3.25, unit: 'oz' },
+  { store: 'aldi', storeLabel: 'Aldi', name: 'Friendly Farms Whole Milk', category: 'dairy', price: 3.25 },
   { store: 'aldi', storeLabel: 'Aldi', name: 'Avocados', category: 'produce', price: 0.89, unit: 'each' },
   { store: 'aldi', storeLabel: 'Aldi', name: 'Bananas', category: 'produce', price: 0.49, unit: 'lb' },
-  { store: 'target', storeLabel: 'Target', name: 'Good & Gather Black Beans', category: 'pantry', price: 0.99, unit: 'oz' },
-  { store: 'target', storeLabel: 'Target', name: 'Good & Gather Pinto Beans', category: 'pantry', price: 0.99, unit: 'oz' },
-  { store: 'jewel-osco', storeLabel: 'Jewel-Osco', name: 'Signature Black Beans', category: 'pantry', price: 1.29, unit: 'oz' },
+  { store: 'target', storeLabel: 'Target', name: 'Good & Gather Black Beans', category: 'pantry', price: 0.99 },
+  { store: 'target', storeLabel: 'Target', name: 'Good & Gather Pinto Beans', category: 'pantry', price: 0.99 },
+  { store: 'jewel-osco', storeLabel: 'Jewel-Osco', name: 'Signature Black Beans', category: 'pantry', price: 1.29 },
 ];
 
 export const DEMO_REFERENCE_PRICES: ReferencePrice[] = EVERYDAY_STAPLES.map((s) => ({
@@ -57,14 +58,24 @@ export function ensureEverydayStaplesInHistory(
   store: PriceHistoryStore,
   weekAnchor = '2026-09-03',
 ): PriceHistoryStore {
-  const map = new Map(store.items.map((i) => [i.key, i]));
+  const map = new Map(store.items.map((i) => [i.key, { ...i, points: [...i.points] }]));
   const weeks = weekStartsBack(weekAnchor, 8);
   let added = 0;
+  let patched = 0;
 
   for (const s of EVERYDAY_STAPLES) {
     const nName = normalizeName(s.name);
     const key = `${s.store}::${nName}`;
-    if (map.has(key)) continue;
+    const existing = map.get(key);
+    if (existing) {
+      // Older seeds marked canned-bean package prices as unit: 'oz' — that is wrong.
+      if (existing.unit !== s.unit) {
+        if (s.unit) existing.unit = s.unit;
+        else delete existing.unit;
+        patched++;
+      }
+      continue;
+    }
 
     const item: ItemHistory = {
       key,
@@ -88,7 +99,7 @@ export function ensureEverydayStaplesInHistory(
     added++;
   }
 
-  if (added === 0) return store;
+  if (added === 0 && patched === 0) return store;
   return {
     ...store,
     updatedAt: new Date().toISOString(),

@@ -51,6 +51,13 @@ const STAPLE_ALIASES: [RegExp, string][] = [
   [/\bpotato chips?\b|\bchips\b/, 'chips'],
 ];
 
+const STAPLE_KEY_SET = new Set(STAPLE_ALIASES.map(([, key]) => key));
+
+/** True when a similarity key is a known staple commodity (not a fallback name). */
+export function isStapleKey(key: string): boolean {
+  return STAPLE_KEY_SET.has(key);
+}
+
 /**
  * All staple similarity keys for a name.
  * Multi-item ads ("pinto beans, black beans or chickpeas") yield multiple keys

@@ -10,7 +10,7 @@ import type {
 } from '../types';
 import { STORES } from '../data/stores';
 import { analyzeAgainstHistory, effectiveDealPrice } from './history';
-import { normalizeName, similarityKeys } from './normalize';
+import { isStapleKey, normalizeName, similarityKeys } from './normalize';
 import {
   comparableUnit,
   formatUnitPrice,
@@ -201,32 +201,62 @@ function sizeMetaFromName(
 
 type CompareMode = 'unit' | 'package' | 'skip';
 
+interface FairSide {
+  price: number;
+  unitPrice?: number;
+  unit?: string;
+  sizeKey?: string;
+}
+
+/**
+ * A unit price is only usable when it is not a mislabeled package price.
+ * Seeds that stamped unit: 'oz' on a $0.95 can made $/oz look like $0.95/oz
+ * and caused fairCompare to skip a same-staple package compare.
+ */
+function reliableUnitPrice(side: FairSide): number | undefined {
+  if (side.unitPrice == null) return undefined;
+  const u = comparableUnit(side.unit);
+  if (!u) return undefined;
+  if (!side.sizeKey && Math.abs(side.unitPrice - side.price) < 0.021) {
+    return undefined;
+  }
+  return side.unitPrice;
+}
+
 /**
  * Fair cross-store compare:
- * - both unit prices + compatible units → unit mode
+ * - both reliable unit prices + compatible units → unit mode
  * - same size key → package mode
+ * - neither side has a reliable size/unit → package mode
+ * - same staple keys and no conflicting pack sizes → package mode
+ *   (canned beans often lack oz on one or both sides)
  * - otherwise skip (do not treat different packs as equal on shelf price)
  */
 function fairCompare(
-  a: { price: number; unitPrice?: number; unit?: string; sizeKey?: string },
-  b: { price: number; unitPrice?: number; unit?: string; sizeKey?: string },
+  a: FairSide,
+  b: FairSide,
+  opts?: { staplePackageFallback?: boolean },
 ): { mode: CompareMode; aVal: number; bVal: number } {
   const ua = comparableUnit(a.unit);
   const ub = comparableUnit(b.unit);
-  if (
-    a.unitPrice != null &&
-    b.unitPrice != null &&
-    ua &&
-    ub &&
-    ua === ub
-  ) {
-    return { mode: 'unit', aVal: a.unitPrice, bVal: b.unitPrice };
+  const aUnit = reliableUnitPrice(a);
+  const bUnit = reliableUnitPrice(b);
+  if (aUnit != null && bUnit != null && ua && ub && ua === ub) {
+    return { mode: 'unit', aVal: aUnit, bVal: bUnit };
   }
   if (a.sizeKey && b.sizeKey && a.sizeKey === b.sizeKey) {
     return { mode: 'package', aVal: a.price, bVal: b.price };
   }
-  // Neither sized — weak package compare only when both lack size entirely
-  if (!a.sizeKey && !b.sizeKey && a.unitPrice == null && b.unitPrice == null) {
+  const aSized = !!a.sizeKey;
+  const bSized = !!b.sizeKey;
+  // Neither sized — package compare when both lack a reliable size/unit
+  if (!aSized && !bSized && aUnit == null && bUnit == null) {
+    return { mode: 'package', aVal: a.price, bVal: b.price };
+  }
+  // Same staple (black beans / pinto / chickpeas…): allow package compare
+  // when size is missing on one or both sides. Skip only if both have
+  // size keys and they disagree (15 oz vs 28 oz).
+  if (opts?.staplePackageFallback && !(aSized && bSized && a.sizeKey !== b.sizeKey)) {
     return { mode: 'package', aVal: a.price, bVal: b.price };
   }
   return { mode: 'skip', aVal: a.price, bVal: b.price };
@@ -235,6 +265,7 @@ function fairCompare(
 function buildCrossStoreAlert(
   c: CompareCandidate,
   mode: CompareMode,
+  opts?: { assumeComparable?: boolean },
 ): CrossStoreCompare {
   const plain = kindPlain(c.kind);
   const shortStore = STORES.find((s) => s.id === c.store)?.short ?? c.storeLabel;
@@ -243,7 +274,7 @@ function buildCrossStoreAlert(
     priceStr = formatUnitPrice(c.unitPrice, c.unit);
   }
   const uncertain =
-    mode === 'package' && !c.sizeKey
+    mode === 'package' && !c.sizeKey && !opts?.assumeComparable
       ? ' (size unclear)'
       : '';
   const alert = `${shortStore} ${priceStr} ${plain}${uncertain}`;
@@ -371,7 +402,8 @@ export function addCrossStoreHints(
       if (c.store === d.store) continue;
       if (c.dealId != null && c.dealId === d.id) continue;
       if (!c.keys.some((k) => keys.includes(k))) continue;
-      const fair = fairCompare(self, c);
+      const stapleMatch = c.keys.some((k) => keys.includes(k) && isStapleKey(k));
+      const fair = fairCompare(self, c, { staplePackageFallback: stapleMatch });
       if (fair.mode === 'skip') continue;
       // Must be meaningfully cheaper on the comparable metric
       if (fair.bVal >= fair.aVal * 0.98) continue;
@@ -397,7 +429,10 @@ export function addCrossStoreHints(
       return b.gap - a.gap;
     });
     const best = beats[0];
-    const cross = buildCrossStoreAlert(best.cand, best.mode);
+    const stapleMatch = best.cand.keys.some((k) => keys.includes(k) && isStapleKey(k));
+    const cross = buildCrossStoreAlert(best.cand, best.mode, {
+      assumeComparable: stapleMatch,
+    });
     const gapPct =
       best.mode === 'unit' && self.unitPrice != null && best.cand.unitPrice != null
         ? ((self.unitPrice - best.cand.unitPrice) / self.unitPrice) * 100
@@ -435,6 +470,7 @@ export function addCrossStoreHints(
     const aKeys = similarityKeys(a.name);
     const bKeys = similarityKeys(b.name);
     const share = aKeys.some((k) => bKeys.includes(k));
+    const stapleShare = aKeys.some((k) => bKeys.includes(k) && isStapleKey(k));
     if (share) {
       const fair = fairCompare(
         {
@@ -461,6 +497,7 @@ export function addCrossStoreHints(
             },
           ),
         },
+        { staplePackageFallback: stapleShare },
       );
       if (fair.mode !== 'skip' && Math.abs(fair.aVal - fair.bVal) > 0.002) {
         return fair.aVal - fair.bVal;
