@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "backfill": "node scripts/backfill-history.mjs",
-    "generate-demo": "node scripts/generate-demo.mjs"
+    "generate-demo": "node scripts/generate-demo.mjs",
+    "test:regressions": "tsx scripts/check-regressions.mts"
   },
   "dependencies": {
     "react": "^19.2.8",
@@ -22,6 +23,7 @@
     "@vercel/node": "^12.0.1",
     "@vitejs/plugin-react": "^6.1.0",
     "oxlint": "^1.79.0",
+    "tsx": "^4.23.13",
     "typescript": "~6.0.2",
     "vercel": "^59.11.7",
     "vite": "^8.2.2"

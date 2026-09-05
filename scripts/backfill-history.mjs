@@ -87,16 +87,19 @@ function guessStoreFromItem(name, brand) {
 
 function guessCategory(name) {
   const blob = String(name || '').toLowerCase();
-  if (/beer|wine|vodka|liquor|prosecco|seltzer|alcohol/.test(blob)) return 'alcohol';
+  if (/beer|wine|vodka|liquor|prosecco|seltzer|alcohol/.test(blob) && !/wine\s+vinegar/.test(blob)) return 'alcohol';
+  if (/shampoo|conditioner|deodorant|toothpaste|makeup|beauty|cosmetic/.test(blob)) return 'beauty';
   if (/detergent|soap|cleaner|paper towel|tissue|trash|laundry|dish/.test(blob)) return 'household';
+  if (/canned|\bbeans?\b|chick\s*peas?|pasta|rice|cereal|soup|flour|peanut\s+butter|vegetable\s+oil/.test(blob) && !/green\s+beans?/.test(blob)) return 'pantry';
   if (/chip|cookie|cracker|snack|popcorn|pretzel|candy/.test(blob)) return 'snacks';
   if (/bread|bagel|bakery|croissant|muffin|roll|bun|tortilla/.test(blob)) return 'bakery';
-  if (/deli|turkey|ham|salami|bologna/.test(blob)) return 'deli';
+  if (/deli|\bham\b|salami|bologna|sliced\s+turkey/.test(blob)) return 'deli';
   if (/frozen|ice cream|pizza|burrito|waffle/.test(blob)) return 'frozen';
-  if (/milk|egg|cheese|yogurt|butter|cream/.test(blob)) return 'dairy';
-  if (/avocado|banana|berry|apple|lettuce|broccoli|pepper|tomato|grape|produce|onion|potato/.test(blob))
+  // Word-bound eggs — never match egg inside veggies
+  if (/\bmilk\b|\beggs?\b|\bcheese\b|\byogurt\b|\bbutter\b|\bcream\b|\bdairy\b/.test(blob) && !/peanut\s+butter|ice\s*cream/.test(blob)) return 'dairy';
+  if (/avocado|banana|berry|apple|lettuce|broccoli|pepper|tomato|grape|produce|onion|potato|green\s+beans?/.test(blob))
     return 'produce';
-  if (/beef|chicken|pork|turkey|sausage|salmon|meat|steak|rib|ground|seafood|shrimp/.test(blob))
+  if (/beef|chicken|pork|turkey|sausage|salmon|meat|steak|\bribs?\b|ground\s+(?:beef|turkey)|seafood|shrimp/.test(blob))
     return 'meat';
   return 'pantry';
 }

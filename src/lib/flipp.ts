@@ -9,7 +9,6 @@
  * not used here. Demo JSON is an honest fallback only when live fails.
  */
 import type {
-  CategoryId,
   Deal,
   PromoType,
   ReferencePrice,
@@ -17,6 +16,7 @@ import type {
   WeekPayload,
 } from '../types';
 import { STORES } from '../data/stores';
+import { guessCategory } from './guessCategory';
 import { normalizeName } from './normalize';
 import {
   parseDealSize,
@@ -127,39 +127,13 @@ function parsePrice(v: unknown): number | undefined {
   return Number.isFinite(n) && n > 0 ? n : undefined;
 }
 
-function guessCategory(item: FlippSearchItem): CategoryId {
-  const blob = `${item.name || ''} ${item._L1 || ''} ${item._L2 || ''} ${item.sale_story || ''}`.toLowerCase();
-  if (/beer|wine|vodka|liquor|prosecco|seltzer|alcohol|spirits/.test(blob)) return 'alcohol';
-  // Beauty / personal care before household (shampoo ≠ laundry; body wash ≠ dish soap)
-  if (
-    /shampoo|conditioner|makeup|mascara|lipstick|foundation|concealer|eyeliner|hair\s*dye|hair\s*color|salon|body\s*wash|bodywash|skincare|skin\s*care|moisturizer|lotion|deodorant|antiperspirant|toothpaste|toothbrush|mouthwash|floss|razor|shaving|sunscreen|beauty|cosmetic/.test(
-      blob,
-    )
-  )
-    return 'beauty';
-  // Household stays cleaning / paper / laundry focused (bar/hand soap & dish soap stay here)
-  if (
-    /detergent|cleaner|disinfectant|bleach|paper towel|toilet paper|tissue|trash|garbage bag|household|laundry|fabric softener|dish\s*soap|dishwashing|hand\s*soap|bar\s*soap|soap/.test(
-      blob,
-    )
-  )
-    return 'household';
-  if (/chip|cookie|cracker|snack|popcorn|pretzel|candy/.test(blob)) return 'snacks';
-  if (/bread|bagel|bakery|croissant|muffin|roll|bun|tortilla/.test(blob)) return 'bakery';
-  if (/deli|sliced|prepared|ready meal|rotisserie/.test(blob) || /ham|salami|bologna/.test(blob))
-    return 'deli';
-  if (/frozen|ice cream|pizza|burrito|waffle/.test(blob)) return 'frozen';
-  if (/milk|egg|cheese|yogurt|butter|cream|dairy/.test(blob)) return 'dairy';
-  if (
-    /produce|fruit|vegetable|avocado|banana|berry|apple|lettuce|broccoli|pepper|tomato|salad|organic/.test(
-      blob,
-    )
-  )
-    return 'produce';
-  if (/beef|chicken|pork|turkey|sausage|salmon|meat|steak|rib|ground|seafood|shrimp/.test(blob))
-    return 'meat';
-  if (/pasta|sauce|oil|rice|bean|cereal|soup|pantry|canned|flour|sugar/.test(blob)) return 'pantry';
-  return 'pantry';
+function categoryForItem(item: FlippSearchItem) {
+  return guessCategory({
+    name: item.name,
+    l1: item._L1,
+    l2: item._L2,
+    saleStory: item.sale_story,
+  });
 }
 
 function detectPromo(item: FlippSearchItem, price?: number, reg?: number): {
@@ -215,7 +189,7 @@ function itemToDeal(item: FlippSearchItem): Deal | null {
     id: `live-${id}`,
     store: storeId,
     storeLabel,
-    category: guessCategory(item),
+    category: categoryForItem(item),
     name,
     normalizedName: normalizeName(name),
     price,

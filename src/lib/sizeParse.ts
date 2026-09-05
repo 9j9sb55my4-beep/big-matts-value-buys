@@ -314,6 +314,27 @@ function tryPerUnit(src: string | null | undefined): ParsedSize | undefined {
   return undefined;
 }
 
+
+/** Canned pantry staples often omit oz on the ad line — soft size for UI. */
+const CANNED_STAPLE_HINT =
+  /\bcanned\b|\bbeans?\s+or\s+vegg|\b(?:black|pinto|kidney|garbanzo|refried|baked|cannellini)\s+beans?\b|\bchick\s*peas?\b|\bvegg(?:ie|ies)\b/i;
+
+function softCannedSize(input: SizeParseInput): ParsedSize | undefined {
+  const joined = [input.name, input.existingSize, input.saleStory, input.postPriceText, input.prePriceText]
+    .map((s) => (s || "").trim())
+    .filter(Boolean)
+    .join(" ");
+  if (!joined || !CANNED_STAPLE_HINT.test(joined)) return undefined;
+  // Prefer not to invent a hard unit price; mark ambiguous for compare fairness
+  return {
+    label: "can · size varies (~15 oz)",
+    unit: "oz",
+    qty: 15,
+    isPerUnit: false,
+    ambiguous: true,
+  };
+}
+
 /**
  * Parse the best available size from Flipp fields + product name.
  * Prefer post_price_text / unit hints; only return undefined when nothing parseable.
@@ -404,6 +425,11 @@ export function parseDealSize(input: SizeParseInput): ParsedSize | undefined {
     if (u === 'each') {
       return { label: 'each', unit: 'each', qty: 1, isPerUnit: true };
     }
+  }
+
+  if (!best) {
+    const soft = softCannedSize(input);
+    if (soft) return soft;
   }
 
   return best;

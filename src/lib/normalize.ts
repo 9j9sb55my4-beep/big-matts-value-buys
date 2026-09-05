@@ -73,17 +73,74 @@ const STAPLE_ALIASES: [RegExp, string][] = [
   [/\bpotato chips?\b|\bchips\b/, 'chips'],
 ];
 
-const STAPLE_KEY_SET = new Set(STAPLE_ALIASES.map(([, key]) => key));
+/** Umbrella + common canned-bean types for multi-option ads */
+const CANNED_BEAN_STAPLE_KEYS = [
+  'canned beans',
+  'black beans',
+  'pinto beans',
+  'kidney beans',
+  'chickpeas',
+] as const;
+
+const SPECIFIC_BEAN_KEYS = new Set([
+  'black beans',
+  'pinto beans',
+  'kidney beans',
+  'chickpeas',
+  'refried beans',
+  'baked beans',
+  'white beans',
+  'canned beans',
+]);
+
+const STAPLE_KEY_SET = new Set([
+  ...STAPLE_ALIASES.map(([, key]) => key),
+  'canned beans',
+]);
 
 /** True when a similarity key is a known staple commodity (not a fallback name). */
 export function isStapleKey(key: string): boolean {
   return STAPLE_KEY_SET.has(key);
 }
 
+/** Generic Jewel-style multi bean ads after brand/canned strip → "beans or veggies". */
+function isGenericCannedBeanAd(n: string, originalLower: string): boolean {
+  if (/\bbeans?\s+or\s+vegg/.test(n)) return true;
+  if (/\bbeans?\s+or\s+vegetables?\b/.test(n)) return true;
+  if (/\bcanned\s+beans?\b/.test(originalLower)) return true;
+  if (/\bbeans?\s+or\s+vegg/.test(originalLower)) return true;
+  // Brand-stripped lone "beans" / "beans or …" (Goya Beans, Bush's Beans)
+  if (
+    /\bbeans?\b/.test(n) &&
+    !/\b(?:green|string|coffee|jelly|vanilla|wax)\s+beans?\b/.test(n) &&
+    !/\bbean\s+sprouts?\b/.test(n) &&
+    !SPECIFIC_BEAN_KEYS.has(n.trim()) &&
+    (/^\s*beans?\b/.test(n) || /\bbeans?\s*$/.test(n) || /\bbeans?\s+or\b/.test(n))
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function expandBeanStapleKeys(n: string, originalName: string, keys: string[]): string[] {
+  const out = [...keys];
+  const originalLower = originalName.toLowerCase();
+  const hasSpecific = out.some((k) => SPECIFIC_BEAN_KEYS.has(k));
+
+  if (isGenericCannedBeanAd(n, originalLower)) {
+    for (const k of CANNED_BEAN_STAPLE_KEYS) out.push(k);
+  } else if (hasSpecific) {
+    // Specific canned bean ↔ generic multi-bean ads share the umbrella key
+    out.push('canned beans');
+  }
+  return [...new Set(out)];
+}
+
 /**
  * All staple similarity keys for a name.
  * Multi-item ads ("pinto beans, black beans or chickpeas") yield multiple keys
  * so brand-specific Jewel rows still match Aldi everyday staples.
+ * Generic "Goya Canned Beans or Veggies" expands to common canned-bean staples.
  */
 export function similarityKeys(name: string): string[] {
   const n = stripBrands(normalizeName(name));
@@ -91,7 +148,8 @@ export function similarityKeys(name: string): string[] {
   for (const [re, key] of STAPLE_ALIASES) {
     if (re.test(n)) keys.push(key);
   }
-  if (keys.length > 0) return [...new Set(keys)];
+  const expanded = expandBeanStapleKeys(n, name, keys);
+  if (expanded.length > 0) return expanded;
   // Fallback: single loose key
   return [similarityKey(name)];
 }
@@ -102,6 +160,7 @@ export function similarityKey(name: string): string {
   for (const [re, key] of STAPLE_ALIASES) {
     if (re.test(n)) return key;
   }
+  if (isGenericCannedBeanAd(n, name.toLowerCase())) return 'canned beans';
   // Drop size noise for looser matching
   return n
     .replace(/\b\d+(\.\d+)?\s*(oz|lb|ct|pk|pack|gallon|ml|g)\b/g, ' ')
